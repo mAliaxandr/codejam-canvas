@@ -9,7 +9,6 @@ function draw4x4() {
         ["00BCD4", "FFEB3B","FFEB3B","00BCD4"]
     ]
     clearCanvas();
-    console.log('4x4');
     for (var i = 0; i < 4; i++) {
         for( var c = 0; c < 4; c++) {
             ctx.fillStyle = `${'#'+data_4x4[i][c]}`;
@@ -6230,7 +6229,6 @@ function draw32x32() {
         ]
       ]
     clearCanvas();
-    console.log('32x32');
     for (var i = 0; i < 32; i++) {
         for( var c = 0; c < 32; c++) {
             let color = `${'rgba('+data_32x32[i][c][0]+','+data_32x32[i][c][1]+','+data_32x32[i][c][2]+','+data_32x32[i][c][3]/255+')'}`;
@@ -6240,16 +6238,27 @@ function draw32x32() {
     }
 }
 
-const btnClear = document.querySelector('.btnClear');
-btnClear.addEventListener('click', clearCanvas);
-
-function clearCanvas() {
-    console.log('clear');
-    ctx.fillStyle = "#808080";
-    ctx.fillRect(0, 0, 512, 512);
+function drawImg() {
+    clearCanvas();
+    let img = new Image();
+    img.onload = function(){
+        ctx.drawImage(img,0,0,512,512);
+    }
+    img.src = './image.png';  
 }
 
+function clearCanvas() {
+    ctx.fillStyle = "#808080";
+    ctx.fillRect(0, 0, 512, 512);  
+}
+
+drawImg();
+
+const btnClear = document.querySelector('.btnClear');
+btnClear.addEventListener('click', clearCanvas);
 const btn4x4 = document.querySelector('.btn4x4');
 btn4x4.addEventListener('click', draw4x4);
 const btn32x32 = document.querySelector('.btn32x32');
 btn32x32.addEventListener('click', draw32x32);
+const btn256x256 = document.querySelector('.btn256x256');
+btn256x256.addEventListener('click', drawImg);

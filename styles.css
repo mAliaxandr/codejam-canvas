@@ -8,14 +8,19 @@ body {
 }
 
 .wrapper {
-    width: 100%;
+    width: 1300px;
+    height: 90vh;
+    margin: 0 auto;
     margin-top: 30px ;
+    padding: 10px;
     display: grid;
-    grid-template-columns:repeat(3, 1fr);
+    grid-template-columns:repeat(4, 1fr);
     grid-template-areas: 
     "tools c c switch" 
     "colors c c e"
     ;
+    justify-content: center;
+    align-items: center;
 }
 
 .tools {
@@ -87,7 +92,6 @@ body {
 
 #canvas {
     grid-area: c;
-    border: 1px solid red;
 }
 
 .switch {
@@ -97,7 +101,6 @@ body {
     box-shadow: 0 0 10px rgba(255,255,255,0.5);
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
 .switch-item {
@@ -107,11 +110,55 @@ body {
     text-transform: uppercase;
     padding: 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     cursor: pointer;
 }
 
 .switch-item:hover {
     background-color: rgba(0,0,0,0.1);
     box-shadow: 0 0 20px rgba(255,255,255,0.5);
+}
+
+@media ( max-width: 1300px){
+    .wrapper {
+        width: 100%;
+    }
+}
+
+@media ( max-width: 990px){
+    .wrapper {
+        grid-template-columns:repeat(3, 1fr);
+        grid-template-areas: 
+        "tools c c" 
+        "colors c c"
+        "switch c c"
+    ;
+    }
+}
+
+@media ( max-width: 800px){
+    .wrapper {
+        grid-template-columns:repeat(3, 1fr);
+        grid-template-areas: 
+        "tools colors switch" 
+        "c c c"
+        "c c c"
+        ;
+    }
+
+    #canvas {
+        margin: 0 auto;
+    }
+
+    .tools {
+        margin: 0;
+    }
+
+    .colors {
+        margin: 0;
+    }
+
+    .switch {
+        margin: 0;
+    }
 }
