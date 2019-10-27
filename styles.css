@@ -1,0 +1,91 @@
+ *{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #808080;
+}
+
+.wrapper {
+    width: 100%;
+    margin-top: 30px ;
+    display: grid;
+    grid-template-columns:repeat(3, 1fr);
+    grid-template-areas: 
+    "tools c c" 
+    "colors c c"
+    ;
+}
+
+.tools {
+    grid-area: tools;
+    margin: 30px;
+    width: 180px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tools-item {
+    width: 100%;
+    border: 1px solid #808080;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.tools-item:hover {
+    background-color: rgba(0,0,0,0.1);
+    box-shadow: 0 0 20px rgba(255,255,255,0.5);
+}
+
+.colors {
+    grid-area: colors;
+    margin: 30px;
+    width: 180px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.colors-item {
+    width: 100%;
+    border: 1px solid #808080;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.colors-item-circle {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.colors-item:hover {
+    background-color: rgba(0,0,0,0.1);
+    box-shadow: 0 0 20px rgba(255,255,255,0.5);
+}
+
+#canvas {
+    grid-area: c;
+    border: 1px solid red;
+}
