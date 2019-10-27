@@ -13,8 +13,8 @@ body {
     display: grid;
     grid-template-columns:repeat(3, 1fr);
     grid-template-areas: 
-    "tools c c" 
-    "colors c c"
+    "tools c c switch" 
+    "colors c c e"
     ;
 }
 
@@ -88,4 +88,30 @@ body {
 #canvas {
     grid-area: c;
     border: 1px solid red;
+}
+
+.switch {
+    grid-area: switch;
+    margin: 30px;
+    width: 180px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.switch-item {
+    width: 100%;
+    border: 1px solid #808080;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.switch-item:hover {
+    background-color: rgba(0,0,0,0.1);
+    box-shadow: 0 0 20px rgba(255,255,255,0.5);
 }

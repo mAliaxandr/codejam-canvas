@@ -6240,11 +6240,16 @@ function draw32x32() {
     }
 }
 
+const btnClear = document.querySelector('.btnClear');
+btnClear.addEventListener('click', clearCanvas);
+
 function clearCanvas() {
     console.log('clear');
     ctx.fillStyle = "#808080";
     ctx.fillRect(0, 0, 512, 512);
 }
 
-// draw4x4();
-draw32x32();
+const btn4x4 = document.querySelector('.btn4x4');
+btn4x4.addEventListener('click', draw4x4);
+const btn32x32 = document.querySelector('.btn32x32');
+btn32x32.addEventListener('click', draw32x32);
